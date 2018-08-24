@@ -28,7 +28,7 @@ class AdminInicioController extends Controller
 
     public function store(request $request) {
         $post = Begin::create([
-            'descripcion'=>$request['desc']
+            'descripcion'=>$request['descripcion']
         ]);
         return redirect('Admin/Inicio')
             ->with('info','Registro exitoso');
@@ -39,17 +39,27 @@ class AdminInicioController extends Controller
     }*/
     public function edit($id)
     {
-
+        $data = DB::table('begins')
+            ->select(DB::raw('id_begin,descripcion'))
+            ->where(['id_begin'=>$id])
+            ->get();
+        return view('Admin/Inicio/update', compact('data'));
     }
 
-    public function update(AboutUpdateRequest $request,$id)
+    public function update(request $request,$id)
     {
-
+        $post = DB::table('begins')
+            ->where('id_begin',$id)
+            ->update(['descripcion'=>$request->descripcion]);
+        return redirect('Admin/Inicio')
+            ->with('info','Registro actualizado con exito');
     }
 
     public function destroy($id)
-
     {
-
+        DB::table('begins')
+            ->where('id_begin',$id)->delete();
+        return redirect('Admin/Inicio')
+            ->with('info','Registro eliminado con exito');
     }
 }

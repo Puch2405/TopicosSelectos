@@ -5,12 +5,12 @@
         <div class="row justify-content-center">
             <div class="col-md-10 offset-1">
                 <div class="card">
-                    <div class="card-header">Formulario para Agregar Inicio</div>
+                    <div class="card-header">Formulario de Donativos</div>
 
                     <div class="card-body">
-                        {!! Form::open(['url' => 'Admin/Inicio']) !!}
+                        {!! Form::open(['url' => 'Admin/Donativos','files'=>true]) !!}
 
-                        @include('Admin.Inicio.partials.form')
+                        @include('Admin.Donativos.partials.form')
 
                         {!! Form::close() !!}
                     </div>

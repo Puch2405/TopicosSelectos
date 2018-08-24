@@ -24,7 +24,7 @@ Route::group(['middleware' => 'useradmin'],function(){
 
     Route::resource('Admin/QuienesSomos','Admin\AdminQuienesSomosController');
 
-    Route::resource('Admin/ConoceMas','Admin\AdminConoceMasController');
+    //Route::resource('Admin/ConoceMas','Admin\AdminConoceMasController');
 });
 
 //User
