@@ -29,6 +29,12 @@
                                             @foreach($begins as $be)
                                             <td>{{$be->id_begin}}</td>
                                             <td>{{$be->descripcion}}</td>
+                                            <td><a href="{{ URL::to('Admin/Inicio/'.$be->id_begin).'/'.'edit' }}" class="btn btn-warning">Editar</a></td>
+                                            <td>
+                                                {!! Form::open(['url' => ['Admin/Inicio',$be->id_begin] , 'method' => 'DELETE']) !!}
+                                                <button href="#!" class="btn btn-danger">Eliminar</button>
+                                                {!! Form::close() !!}
+                                            </td>
                                             @endforeach
                                         </tr>
                                     </tbody>
