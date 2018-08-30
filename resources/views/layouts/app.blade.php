@@ -24,15 +24,27 @@
     <script src="{{asset('js/toastr.js')}}"></script>
 </head>
 <body>
+
+<div class="social">
+    <ul>
+        <li><a href="" class="icon-facebook">Donar <img src="{{asset('donativo_rapet.png')}}" alt="" width="50"> </a></li>
+    </ul>
+</div>
     <header>
-        <div id="app">
+        <div  id="app">
             @guest
-                <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                    <div class="container">
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <!-- Left Side Of Navbar -->
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
+                <nav class="navbar navbar-dark navbar-expand-md bg-success justify-content-between">
+                    <a class="navbar-brand" href="#">
+                        <img src="{{asset('logo-ayudog.ico')}}" width="150"  class="d-inline-block align-top" alt="">
+
+                    </a>
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
+                            <ul class="navbar-nav">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="{{url('Inicio')}}"> Inicio </a>
                                 </li>
                                 <li class="nav-item">
@@ -44,9 +56,13 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('ConoceMas')}}"> Conoce Mas </a>
                                 </li>
+
                             </ul>
 
-                            <!-- Right Side Of Navbar -->
+                        </div>
+
+
+                        <div class="navbar-collapse collapse dual-nav w-50 order-2">
                             <ul class="navbar-nav ml-auto">
                                 <!-- Authentication Links -->
                                 <li class="nav-item">
@@ -59,6 +75,7 @@
                         </div>
                     </div>
                 </nav>
+
                 @else
                     @if(Auth::user()->type_user == 2 )
                         @include('Admin.Menu.adminmenu')
@@ -80,11 +97,13 @@
         @yield('content')
     </main>
 
-    <footer class="bg-primary footer">
+    <footer class="bg-success footer">
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="https://mdbootstrap.com/bootstrap-tutorial/" style="color: white"> MDBootstrap.com</a>
+            <a href="" style="color: white"> Ayudog</a>
+
+
         </div>
         <!-- Copyright -->
 

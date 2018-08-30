@@ -18,5 +18,10 @@
     "lodash": "^4.17.4",
     "popper.js": "^1.14.4",
     "vue": "^2.5.7"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free": "^5.3.1",
+    "font-awesome": "^4.7.0"
   }
 }
