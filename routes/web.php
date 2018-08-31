@@ -38,3 +38,5 @@ Route::group(['middleware' => ['usernormally']],function (){
     Route::resource('User/ConoceMas','Normally\UserConoceMasController');
 });
 Auth::routes();
+Route::get('app/Http/Controllers/', 'Auth\LoginController@redirectToProvider')->name('auth.facebook');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
