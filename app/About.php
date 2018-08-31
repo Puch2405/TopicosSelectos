@@ -8,6 +8,6 @@ class About extends Model
 {
     protected $table = 'abouts';
     protected $primarykey='id_about';
-    protected $fillable= ['descripcion','archivo'];
+    protected $fillable= ['titulo','descripcion','archivo'];
     public $timestamps = false;
 }

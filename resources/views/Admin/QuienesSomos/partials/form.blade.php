@@ -1,4 +1,8 @@
 <div class="form-group">
+    {{Form::label('titulo','Titulo')}}
+    {{Form::textarea('titulo',null, ['class'=>'form-control','id'=>'titulo','rows'=>'5'])}}
+</div>
+<div class="form-group">
     {{Form::label('descripcion','Descripcion')}}
     {{Form::textarea('descripcion',null, ['class'=>'form-control','id'=>'descripcion','rows'=>'5'])}}
 </div>

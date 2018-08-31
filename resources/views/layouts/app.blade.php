@@ -27,7 +27,7 @@
 
 <div class="social">
     <ul>
-        <li><a href="" class="icon-facebook">Donar <img src="{{asset('donativo_rapet.png')}}" alt="" width="50"> </a></li>
+        <li><a href="{{url('Donativos')}}" class="icon-facebook">Donar <img src="{{asset('donativo_rapet.png')}}" alt="" width="50"> </a></li>
     </ul>
 </div>
     <header>

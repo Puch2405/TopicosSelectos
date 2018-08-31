@@ -18,7 +18,7 @@ class AdminQuienesSomosController extends Controller
     public function index()
     {
         $begins = DB::table('abouts')
-            ->select(DB::raw('id_about,descripcion,archivo'))
+            ->select(DB::raw('id_about,titulo,descripcion,archivo'))
             ->get();
         return view('Admin/QuienesSomos/index',compact('begins'));
     }
@@ -31,6 +31,7 @@ class AdminQuienesSomosController extends Controller
         $path = Storage::disk('public')
             ->put('Photos',$request->file('ar'));
         $post = About::create([
+            'titulo'=>$request['titulo'],
             'descripcion'=>$request['descripcion'],
             'archivo'=>$path
         ]);
@@ -44,7 +45,7 @@ class AdminQuienesSomosController extends Controller
     public function edit($id)
     {
         $data = DB::table('abouts')
-            ->select(DB::raw('id_about,descripcion,archivo as ar'))
+            ->select(DB::raw('id_about,titulo,descripcion,archivo as ar'))
             ->where(['id_about'=>$id])
             ->get();
         return view('Admin/QuienesSomos/update', compact('data'));
@@ -56,7 +57,7 @@ class AdminQuienesSomosController extends Controller
             ->put('Photos',$request->file('ar'));
         $post = DB::table('abouts')
             ->where('id_about',$id)
-            ->update(['descripcion'=>$request->descripcion,'archivo'=>$path]);
+            ->update(['titulo'=>$request->titulo,'descripcion'=>$request->descripcion,'archivo'=>$path]);
         return redirect('Admin/QuienesSomos')
             ->with('info','Registro actualizado con exito');
     }

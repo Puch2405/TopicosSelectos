@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-10 offset-1">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Inicio</div>
 
@@ -30,6 +30,7 @@
                                     @foreach($begins as $be)
                                         <tr>
                                             <td>{{$be->id_about}}</td>
+                                            <td>{{$be->titulo}}</td>
                                             <td>{{$be->descripcion}}</td>
                                             <td>{{$be->archivo}}</td>
                                             <td><a href="{{ URL::to('Admin/QuienesSomos/'.$be->id_about).'/'.'edit' }}" class="btn btn-warning">Editar</a></td>
